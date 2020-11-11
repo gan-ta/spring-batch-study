@@ -1,4 +1,4 @@
-package com.example.batch.job.flow;
+package com.example.batch.job.nextstep;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
