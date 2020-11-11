@@ -1,0 +1,30 @@
+Next
+Step의 순서를 제어
+앞의 Step에서 오류가 나면 나머지 뒤에 있는 Step들은 실행되지 못함
+
+조건별로 Step필요한 경우 -> 조건별 흐름 제어 사용
+
+.on()
+- 캐치할 ExitStatus 지정
+- * 일 경우 모든 ExitStatus<BatchStatus가 아님>가 지정된다.
+
+.to()
+- 다음으로 이동할 Step지정
+
+.from()
+- 일종의 이벤트 리스너 역할
+- 상태값을 보고 일치하는 상태라면 to()에 포함된 step을 호출
+- 추가로 이벤트 캐치
+
+.end()
+- FlowBuilder를 반환하는 end와 FlowBuilder를 종료하는 end 2개
+- on("*")뒤에 있는 end는 FlowBuilder를 반환하는 end
+- build() 앞에 있는 end는 FlowBuilder를 종료하는 end
+- FlowBuilder를 반환하는 end 사용시 계속해서 from을 이어갈 수 있음
+
+BatchStatus -> Job 또는 Step의 실행 결과를 Spring에서 기록할 때 사용하는 Enum
+Exit Status -> Step의 실행 후 상태<Enum이 아님>
+
+JobExecutionDecider  => Step들의 Flow속에서 분기만 담당하는 타입
+-> Step과는 역할과 책임이 분리된 채 진행 할 수 있는 장점
+
