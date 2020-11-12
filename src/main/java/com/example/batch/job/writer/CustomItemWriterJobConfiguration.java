@@ -1,7 +1,7 @@
 package com.example.batch.job.writer;
 
-import com.example.batch.entity.Pay;
-import com.example.batch.entity.Pay2;
+import com.example.batch.entity.pay.Pay;
+import com.example.batch.entity.pay.Pay2;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.EntityManagerFactory;
-import java.util.List;
 import java.util.function.Function;
 
 @Slf4j

@@ -1,6 +1,9 @@
 spring:
   profiles:
     active: local
+
+spring.batch.job.names: ${job.name:NONE}
+logging.level.org.springframework.batch: DEBUG
 ---
 spring:
   profiles: local
@@ -19,4 +22,5 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3306/batch?verifyServerCertificate=false&useSSL=false&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
       username: test
       password: Test12345*
+
 
